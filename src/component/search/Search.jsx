@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
-const Search = () => {
+const Search = ({ formList }) => {
   return (
     <>
         <div className="lg:max-h-[250px] mt-6">
@@ -36,7 +36,7 @@ const Search = () => {
           </div>
         </div>
         {/* Search Button */}
-        <button className="search-btn">🔍️ Search</button>
+        <button className="search-btn">🔍️ {formList ? "Modify Search" : "Search"}</button>
     </>
   );
 };
