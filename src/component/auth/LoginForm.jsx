@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SocialLogin from "./SocialLogin";
 
 const LoginForm = () => {
@@ -18,7 +19,7 @@ const LoginForm = () => {
             Login
           </button>
         </form>
-        <div className="text-center text-xs text-gray-500">or Signup with</div>
+        <Link href="/register" className="text-center text-xs text-gray-500">or Signup with</Link>
         <SocialLogin />
       </div>
     </section>
