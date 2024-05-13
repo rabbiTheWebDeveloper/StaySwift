@@ -1,15 +1,18 @@
+import Image from "next/image";
 
-const HotelCard = () => {
+const HotelCard = ({hotel}) => {
   return (
     <div className="flex gap-6 border border-gray/20 p-4 rounded-md">
-    <img
-      src="./assets/images/image-1.png"
+    <Image
+      src={hotel?.thumbNailUrl}
       className="max-h-[162px] max-w-[240px]"
-      alt=""
+      alt={hotel?.name}
+      width={240}
+      height={162}
     />
     <div className="flex-1">
-      <h2 className="font-bold text-lg">Effotel By Sayaji Jaipur</h2>
-      <p>📍 Kolkata</p>
+      <h2 className="font-bold text-lg">{hotel?.name}</h2>
+      <p>📍 {hotel.city}</p>
       <div className="flex gap-2 items-center my-4">
         <div className="bg-primary w-[35px] h-[35px] rounded-sm text-white grid place-items-center font-bold">
           5.3
