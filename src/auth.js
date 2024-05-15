@@ -22,9 +22,19 @@ export const { handlers :{GET ,POST}, signIn, signOut, auth } = NextAuth({
         if(credentials === null) return null;
 
         try{
+          console.log(credentials);
           const user = await userModel.findOne({email: credentials.email});
-          return user
-          console.log(user);
+          if (user) {
+            const isMatch = user.email === credentials.email;
+            if(isMatch) {
+                return user;
+            } else {
+                throw new Error('Email or password mismatch');
+            }
+        } else {
+            throw new Error('User not found');
+        }
+       
         }catch(e){
           console.log(e)
         }

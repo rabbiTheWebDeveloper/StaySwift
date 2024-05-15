@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Search from "@/component/search/Search";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
